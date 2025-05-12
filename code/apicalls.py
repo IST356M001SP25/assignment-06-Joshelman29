@@ -1,19 +1,39 @@
 import requests
 
 # Put your CENT Ischool IoT Portal API KEY here.
-APIKEY = "APIKEYHERE"
+APIKEY = "cab8afd61a152b2e03c25247"
 
 def get_google_place_details(google_place_id: str) -> dict:
-    pass # Implement this function
-    
+    headers = { 'X-API-KEY': APIKEY }
+    payload = { 'place_id': google_place_id }
+    endpoint = "https://cent.ischool-iot.net/api/google/places/details"
+    res = requests.get(endpoint, headers=headers, params=payload)
+    res.raise_for_status()
+    return res.json()
+
 def get_azure_sentiment(text: str) -> dict:
-    pass # Implement this function
+    headers = { 'X-API-KEY': APIKEY }
+    body = { "text": text }
+    endpoint = "https://cent.ischool-iot.net/api/azure/sentiment"
+    res = requests.post(endpoint, headers=headers, data=body)
+    res.raise_for_status()
+    return res.json()
 
 def get_azure_key_phrase_extraction(text: str) -> dict:
-    pass # Implement this function
+    headers = { 'X-API-KEY': APIKEY }
+    body = { "text": text }
+    endpoint = "https://cent.ischool-iot.net/api/azure/keyphrasextraction"
+    res = requests.post(endpoint, headers=headers, data=body)
+    res.raise_for_status()
+    return res.json()
 
 def get_azure_named_entity_recognition(text: str) -> dict:
-    pass # Implement this function
+    headers = { 'X-API-KEY': APIKEY }
+    body = { "text": text }
+    endpoint = "https://cent.ischool-iot.net/api/azure/entityrecognition"
+    res = requests.post(endpoint, headers=headers, data=body)
+    res.raise_for_status()
+    return res.json()
 
 
 def geocode(place:str) -> dict:

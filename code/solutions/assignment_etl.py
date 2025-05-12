@@ -2,17 +2,18 @@ import streamlit as st
 import pandas as pd
 import requests
 import json 
-if __name__ == "__main__":
-    import sys
-    sys.path.append('code')
-    from apicalls import get_google_place_details, get_azure_sentiment, get_azure_named_entity_recognition
-else:
-    from code.apicalls import get_google_place_details, get_azure_sentiment, get_azure_named_entity_recognition
 
-PLACE_IDS_SOURCE_FILE = "cache/place_ids.csv"
-CACHE_REVIEWS_FILE = "cache/reviews.csv"
-CACHE_SENTIMENT_FILE = "cache/reviews_sentiment_by_sentence.csv"
-CACHE_ENTITIES_FILE = "cache/reviews_sentiment_by_sentence_with_entities.csv"
+import os
+
+from apicalls import get_google_place_details, get_azure_sentiment, get_azure_named_entity_recognition
+
+
+
+
+PLACE_IDS_SOURCE_FILE = "code/solutions/cache/place_ids.csv"
+CACHE_REVIEWS_FILE = "code/solutions/cache/reviews.csv"
+CACHE_SENTIMENT_FILE = "code/solutions/cache/reviews_sentiment_by_sentence.csv"
+CACHE_ENTITIES_FILE = "code/solutions/cache/reviews_sentiment_by_sentence_with_entities.csv"
 
 
 def reviews_step(place_ids: str|pd.DataFrame) -> pd.DataFrame:
