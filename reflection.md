@@ -1,7 +1,7 @@
 # Reflection
 
-Student Name:  name
-Sudent Email:  email
+Student Name:  josh elman
+Sudent Email:  Jdelman@syr.edu
 
 ## Instructions
 
@@ -22,4 +22,9 @@ Examples:
 **Best Reflection** "I learned when to use while vs for loops. While loops are for sentiel-controlled values (waiting for a condition to occur), vs for loops are for iterating over collections of fixed values."
 
 `--- Reflection Below This Line ---`
+
+
+In apicalls.py, we implemented four helper functions that handle external API requests: get_google_place_details() to retrieve place details and reviews using the Google Places API, and three Azure-based functions including get_azure_sentiment(), get_azure_key_phrase_extraction(), and get_azure_named_entity_recognition(). These functions are used to analyze the sentiment, extract key phrases, and detect named entities in the review text. In assignment_etl.py, we first created reviews_step() function which takes a list of Google Place IDs, calls the Google API to fetch reviews, and flattens them into a structured DataFrame, saving it as reviews.csv. The second function, sentiment_step(), processes these reviews by calling the Azure sentiment API for each review, normalizing the results at the sentence level, and writing them to reviews_sentiment_by_sentence.csv. The final function, entity_extraction_step(), uses the Azure entity recognition API to extract named entities from each sentence and stores the output in reviews_sentiment_by_sentence_with_entities.csv. The code difficulty level is hard and one test failed. 
+
+
 

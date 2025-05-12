@@ -16,9 +16,10 @@ RECALL: each step should input a file or dataframe and output a file AND datafra
 '''
 
 # Define the cache files (outputs from the two steps)
-LOCATION_SOURCE_FILE = "cache/locations.csv"
-GEOCODE_CACHE_FILE = "cache/geocoded_locations.csv"
-WEATHER_CACHE_FILE = "cache/weather_locations.csv"
+LOCATION_SOURCE_FILE = "code/solutions/cache/locations.csv"
+GEOCODE_CACHE_FILE = "code/solutions/cache/geocoded_locations.csv"
+WEATHER_CACHE_FILE = "code/solutions/cache/weather_locations.csv"
+
 
 def geocode_step(locations: str|pd.DataFrame) -> pd.DataFrame:
     '''
